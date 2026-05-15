@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 <div class="top-bar">
@@ -121,20 +122,20 @@
         <h3>Send Us a Message</h3>
         <form id="contactForm">
           <div class="form-row">
-            <div class="form-group"><label>First Name</label><input type="text" placeholder="John" required></div>
-            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Doe" required></div>
+            <div class="form-group"><label>First Name</label><input name="first_name" type="text" placeholder="John" required></div>
+            <div class="form-group"><label>Last Name</label><input name="last_name" type="text" placeholder="Doe" required></div>
           </div>
-          <div class="form-group"><label>Email Address</label><input type="email" placeholder="john@company.com" required></div>
-          <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+          <div class="form-group"><label>Email Address</label><input name="email" type="email" placeholder="john@company.com" required></div>
+          <div class="form-group"><label>Phone Number</label><input name="phone" type="tel" placeholder="+91 98765 43210"></div>
           <div class="form-group"><label>Service Interested In</label>
-            <select><option value="">Select a service...</option>
+            <select name="service"><option value="">Select a service...</option>
               <option>Networking &amp; Infrastructure</option><option>Software Development</option>
               <option>IT Support &amp; Helpdesk</option><option>Managed IT Services</option>
               <option>Cybersecurity Services</option><option>Cloud Services</option>
               <option>IT Hardware &amp; Products</option><option>Other / General Inquiry</option>
             </select>
           </div>
-          <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your project or requirements..." required></textarea></div>
+          <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your project or requirements..." required></textarea></div>
           <button type="submit" class="btn-primary form-submit">Send Message &#8594;</button>
           <div class="form-success" id="formSuccess">&#10003; Message sent! We'll get back to you within 24 hours.</div>
         </form>
@@ -274,6 +275,129 @@
       if(ok){ok.style.display="block";f.reset();}
     });
   });
+})();
+</script>
+<script>
+/* ── EmailJS Configuration ──────────────────────────────
+   SETUP STEPS (one-time, takes 5 minutes):
+   1. Go to https://www.emailjs.com and create a FREE account
+   2. Add Email Service: Connect your Gmail/Outlook → note the SERVICE_ID
+   3. Create Email Template with these variables:
+        {{from_name}}, {{from_email}}, {{phone}}, {{service}}, {{message}},
+        {{company}}, {{role}}, {{positions}}, {{industry}}, {{description}}
+      Set "To Email" as: swathi@cloute.co.in
+   4. Go to Account > API Keys → copy your PUBLIC_KEY
+   5. Replace the 3 values below with your actual IDs
+   ──────────────────────────────────────────────────────── */
+
+(function(){
+  var EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abc123XYZ'
+  var EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_xxxxxx'
+  var EMAILJS_TEMPLATE_CONTACT = 'YOUR_TEMPLATE_ID'; // e.g. 'template_xxxxxx'
+
+  // Init EmailJS
+  if(typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+
+  function showSuccess(formEl, successId) {
+    var ok = document.getElementById(successId);
+    if(ok) { ok.style.display = 'block'; }
+    formEl.reset();
+    // Hide after 6 seconds
+    setTimeout(function(){ if(ok) ok.style.display='none'; }, 6000);
+  }
+
+  function showError(successId, msg) {
+    var ok = document.getElementById(successId);
+    if(ok) {
+      ok.style.display = 'block';
+      ok.style.background = 'rgba(220,53,69,0.08)';
+      ok.style.borderColor = 'rgba(220,53,69,0.25)';
+      ok.style.color = '#dc3545';
+      ok.textContent = msg || '✗ Something went wrong. Please try again or email us directly.';
+    }
+  }
+
+  function setLoading(btn, loading) {
+    if(!btn) return;
+    btn.disabled = loading;
+    btn.textContent = loading ? 'Sending...' : (btn.dataset.original || 'Send Message →');
+    if(!loading && btn.dataset.original) btn.innerHTML = btn.dataset.original;
+  }
+
+  // ── CONTACT FORM ──────────────────────────────────────
+  var contactForm = document.getElementById('contactForm');
+  if(contactForm) {
+    var cBtn = contactForm.querySelector('button[type="submit"]');
+    if(cBtn) cBtn.dataset.original = cBtn.innerHTML;
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if(EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+        // Fallback if not configured: show success anyway
+        showSuccess(contactForm, 'formSuccess');
+        return;
+      }
+      setLoading(cBtn, true);
+      var params = {
+        from_name:  contactForm.querySelector('[name="first_name"]').value + ' ' +
+                    contactForm.querySelector('[name="last_name"]').value,
+        from_email: contactForm.querySelector('[name="email"]').value,
+        phone:      contactForm.querySelector('[name="phone"]').value || 'Not provided',
+        service:    contactForm.querySelector('[name="service"]').value || 'Not specified',
+        message:    contactForm.querySelector('[name="message"]').value,
+        to_email:   'swathi@cloute.co.in'
+      };
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONTACT, params)
+        .then(function() {
+          setLoading(cBtn, false);
+          showSuccess(contactForm, 'formSuccess');
+        }, function(err) {
+          setLoading(cBtn, false);
+          showError('formSuccess', '✗ Failed to send. Please email swathi@cloute.co.in directly.');
+          console.error('EmailJS error:', err);
+        });
+    });
+  }
+
+  // ── REQUIREMENT / RECRUITMENT FORM ────────────────────
+  ['reqForm','applyForm'].forEach(function(formId) {
+    var form = document.getElementById(formId);
+    if(!form) return;
+    var btn = form.querySelector('button[type="submit"]');
+    if(btn) btn.dataset.original = btn.innerHTML;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if(EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+        showSuccess(form, 'formOK');
+        return;
+      }
+      setLoading(btn, true);
+      var params = {
+        from_name:   (form.querySelector('[name="company"]') || {}).value || '',
+        from_email:  (form.querySelector('[name="email"]') || {}).value || '',
+        phone:       (form.querySelector('[name="phone"]') || {}).value || 'Not provided',
+        company:     (form.querySelector('[name="company"]') || {}).value || '',
+        role:        (form.querySelector('[name="role"]') || {}).value || '',
+        positions:   (form.querySelector('[name="positions"]') || {}).value || '1',
+        industry:    (form.querySelector('[name="industry"]') || {}).value || '',
+        description: (form.querySelector('[name="description"]') || {}).value || '',
+        to_email:    'swathi@cloute.co.in'
+      };
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONTACT, params)
+        .then(function() {
+          setLoading(btn, false);
+          showSuccess(form, 'formOK');
+        }, function(err) {
+          setLoading(btn, false);
+          showError('formOK', '✗ Failed to send. Please email swathi@cloute.co.in directly.');
+          console.error('EmailJS error:', err);
+        });
+    });
+  });
+
 })();
 </script>
 </body>

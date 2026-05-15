@@ -588,3 +588,95 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none}
   .slide-content{padding:calc(var(--nav) + 50px) 20px 60px}
   .slider-arrow{display:none}
 }
+
+/* ═══════════════════════════════════════════
+   TOP BAR — contact left, social icons right
+   ═══════════════════════════════════════════ */
+.top-bar {
+  background: #0c0c0a;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9100;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.top-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.top-bar-left a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255,255,255,0.58);
+  font-size: 0.75rem;
+  font-family: var(--fb);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+.top-bar-left a:hover { color: #fff; }
+.top-bar-left a svg {
+  width: 13px; height: 13px;
+  fill: var(--blue);
+  flex-shrink: 0;
+}
+.top-bar-divider {
+  width: 1px; height: 14px;
+  background: rgba(255,255,255,0.12);
+}
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tb-social {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+.tb-social svg { width: 12px; height: 12px; fill: currentColor; }
+.tb-social:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Push nav + content down to make room for top bar */
+.site-nav { top: 36px; }
+.hero-slider .slide-content,
+.hero-slider .sl-copy {
+  padding-top: calc(var(--nav) + 36px + 70px) !important;
+}
+
+@media(max-width: 768px) {
+  .top-bar { display: none; }
+  .site-nav { top: 0; }
+  .hero-slider .slide-content,
+  .hero-slider .sl-copy {
+    padding-top: calc(var(--nav) + 50px) !important;
+  }
+}

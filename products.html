@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<title>IT Hardware Companies in India | Cloute Technologies</title>
+<meta name="description" content="Cloute Technologies is one of the top IT Hardware Companies in India providing high-performance computers, servers, network devices & software solutions for businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="shortcut icon" href="./favicon.ico">
+<style>
+  :root{
+    --navy:#0B1E39;
+    --navy-2:#102A4C;
+    --blue:#1E5FDB;
+    --blue-light:#4A85F0;
+    --cyan:#17C3E6;
+    --ink:#0F172A;
+    --slate:#5B6B85;
+    --paper:#F5F8FC;
+    --line:#E3E9F2;
+  }
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:#fff;
+  }
+  h1,h2,h3,h4,.brand,.display-font{
+    font-family:'Sora',sans-serif;
+  }
+  .eyebrow{
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--blue);
+  }
+
+  /* ---- Top bar ---- */
+  .topbar{
+    background:#1B1B1B;
+    color:#D8D8D8;
+    font-size:.85rem;
+    padding:.5rem 0;
+  }
+  .topbar a{color:#D8D8D8;text-decoration:none;}
+  .topbar a:hover{color:#fff;}
+  .topbar .contact-item{display:inline-flex;align-items:center;gap:.5rem;margin-right:1.6rem;}
+  .topbar .contact-item i{color:#fff;}
+  .topbar .social-icon{
+    width:28px;height:28px;border-radius:50%;
+    background:rgba(255,255,255,.08);
+    display:inline-flex;align-items:center;justify-content:center;
+    color:#fff;font-size:.85rem;margin-left:.4rem;
+  }
+  .topbar .social-icon:hover{background:var(--blue);}
+
+  /* ---- Navbar ---- */
+  .navbar{
+    background:#fff;
+    padding-top:1.1rem;
+    padding-bottom:1.1rem;
+    transition:box-shadow .25s ease, padding .25s ease;
+  }
+  .navbar.is-sticky{
+    box-shadow:0 6px 24px -12px rgba(11,30,57,.25);
+    padding-top:.65rem;
+    padding-bottom:.65rem;
+  }
+  .navbar-brand{display:flex;align-items:center;gap:.6rem;}
+  .navbar-brand img{height:42px;width:auto;transition:height .25s ease;}
+  .navbar.is-sticky .navbar-brand img{height:34px;}
+  .nav-link{
+    font-weight:600;
+    color:var(--navy)!important;
+    font-size:.93rem;
+    margin:0 .35rem;
+  }
+  .nav-link:hover, .nav-link.active{color:var(--blue)!important;}
+  .btn-cloute{
+    background:var(--blue);color:#fff;font-weight:600;
+    border-radius:8px;padding:.6rem 1.4rem;border:none;
+  }
+  .btn-cloute:hover{background:var(--navy-2);color:#fff;}
+
+  /* ---- Page header ---- */
+  .page-header{
+    background:radial-gradient(1100px 500px at 85% -10%, rgba(30,95,219,.18), transparent 60%), var(--navy);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    padding:3.5rem 0;
+    text-align:center;
+  }
+  .page-header::after{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:42px 42px;
+    mask-image:linear-gradient(to bottom, black, transparent 75%);
+    pointer-events:none;
+  }
+  .page-header h1{font-weight:800;font-size:2.3rem;position:relative;}
+  .page-header .crumbs{color:#C6D1E6;font-size:.95rem;position:relative;}
+  .page-header .crumbs a{color:#C6D1E6;text-decoration:none;}
+  .page-header .crumbs a:hover{color:#fff;}
+
+  section{padding:4.5rem 0;}
+  .section-title{font-weight:800;font-size:2rem;color:var(--navy);}
+  .section-sub{color:var(--slate);max-width:760px;}
+  .bg-paper{background:var(--paper);}
+
+  /* ---- Product cards ---- */
+  .product-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:1.8rem;
+    height:100%;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .product-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 32px -18px rgba(11,30,57,.25);
+  }
+  .product-icon{
+    width:56px;height:56px;
+    border-radius:12px;
+    background:linear-gradient(135deg, var(--blue), var(--cyan));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:1.4rem;
+    margin-bottom:1.1rem;
+  }
+  .product-card h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.85rem;}
+  .product-card .row-label{
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:.2rem;
+  }
+  .product-card p{color:var(--slate);font-size:.9rem;}
+  .product-card .field-block{margin-bottom:1rem;}
+  .product-card .field-block:last-child{margin-bottom:0;}
+
+  /* ---- Intro image band ---- */
+  .intro-photo{
+    border-radius:16px;
+    overflow:hidden;
+  }
+  .intro-photo img{width:100%;display:block;}
+
+  /* ---- FAQ ---- */
+  .accordion-button{font-weight:700;color:var(--navy);}
+  .accordion-button:not(.collapsed){background:var(--paper);color:var(--blue);box-shadow:none;}
+  .accordion-button:focus{box-shadow:none;}
+
+  /* ---- CTA ---- */
+  .cta-band{
+    background:linear-gradient(120deg, var(--navy) 0%, var(--navy-2) 100%);
+    color:#fff;border-radius:20px;
+  }
+
+  /* ---- Footer ---- */
+  footer{background:var(--navy);color:#C6D1E6;padding-top:3.5rem;}
+  footer h5{color:#fff;font-weight:700;font-size:1rem;margin-bottom:1rem;}
+  footer a{color:#AEBEDA;text-decoration:none;font-size:.9rem;}
+  footer a:hover{color:var(--cyan);}
+  footer .social-icon{
+    width:36px;height:36px;border-radius:8px;
+    background:rgba(255,255,255,.08);
+    display:flex;align-items:center;justify-content:center;color:#fff;
+  }
+  footer .social-icon:hover{background:var(--blue);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:2.5rem;padding:1.25rem 0;
+    font-size:.82rem;color:#8FA0C1;
+  }
+
+  @media (max-width:767.98px){
+    .page-header{padding:2.6rem 0;}
+    .page-header h1{font-size:1.7rem;}
+    .section-title{font-size:1.55rem;}
+    section{padding:3rem 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar d-none d-md-block">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div>
+      <a href="tel:+919952110515" class="contact-item"><i class="bi bi-telephone-fill"></i>+91 99521 10515</a>
+      <a href="mailto:tech.support@cloute.co.in" class="contact-item mb-0"><i class="bi bi-envelope-fill"></i>tech.support@cloute.co.in</a>
+    </div>
+    <div>
+      <a href="https://www.instagram.com/cloutetechnologies/" class="social-icon"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/cloute-technologies/" class="social-icon"><i class="bi bi-linkedin"></i></a>
+      <a href="https://x.com/ClouteTech" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+      <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+            <img src="data:image/png;base64,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" alt="Cloute Technologies" height="38">
+
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto my-3 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="networking-and-infrastructure.html">Networking and Infrastructure</a></li>
+            <li><a class="dropdown-item" href="software-development-services.html">Software Development Services</a></li>
+            <li><a class="dropdown-item" href="it-support-and-helpdesk.html">IT Support and Helpdesk</a></li>
+            <li><a class="dropdown-item" href="managed-it-services.html">Managed IT Services</a></li>
+            <li><a class="dropdown-item" href="cybersecurity-services.html">Cybersecurity Services</a></li>
+            <li><a class="dropdown-item" href="cloud-services.html">Cloud Services</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="recruitment.html">Recruitment</a></li>
+        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-cloute d-none d-lg-inline-block">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Page header -->
+<header class="page-header">
+  <div class="container position-relative">
+    <h1 class="mb-2">IT Hardware Companies in India</h1>
+    <div class="crumbs"><a href="index.html">Home</a> / Products</div>
+  </div>
+</header>
+
+<!-- Intro -->
+<section>
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <div class="eyebrow mb-2">Trusted IT Hardware &amp; Software Solutions</div>
+        <h2 class="section-title mb-3">IT Hardware Companies in India</h2>
+        <p class="section-sub">At Cloute Technologies, we deliver end-to-end IT hardware and software solutions that empower businesses to perform at their best. As one of the leading hardware companies in India and trusted software solution companies in Bangalore, we provide cutting-edge technology products and services designed to enhance efficiency, security, and scalability.</p>
+        <p class="section-sub">Our comprehensive portfolio includes everything from enterprise-grade computers, servers, and networking devices to advanced software solutions that streamline operations and enable digital growth. Whether you're upgrading your infrastructure or integrating new systems, Cloute Technologies ensures seamless implementation, consistent performance, and unmatched service quality.</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="intro-photo">
+          <img src="https://cloute.co.in/wp-content/uploads/2024/06/our-services-img-4.jpg" alt="Networking company in Bangalore ensuring secure connectivity and high-performance network infrastructure">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products grid -->
+<section class="bg-paper" id="our-services">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width:760px;">
+      <div class="eyebrow mb-2">Our Products</div>
+      <h2 class="section-title">Complete Hardware &amp; Software Portfolio</h2>
+      <p class="section-sub mx-auto mt-3">Everything your business needs to build, secure and scale its IT infrastructure — backed by expert installation and AMC support.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <div class="product-icon"><i class="bi bi-hdd-network"></i></div>
+          <h3>Network Devices &amp; Infrastructure</h3>
+          <div class="field-block">
+            <div class="row-label">Products</div>
+            <p>Routers, switches, firewalls, and wireless access points.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Services</div>
+            <p>Sales, distribution, installation, and Annual Maintenance Contracts (AMC).</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Benefit</div>
+            <p>Build a seamless and secure network foundation with advanced devices from leading brands, backed by expert support and proactive maintenance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <div class="product-icon"><i class="bi bi-server"></i></div>
+          <h3>Servers &amp; Storage Solutions</h3>
+          <div class="field-block">
+            <div class="row-label">Products</div>
+            <p>High-performance servers, NAS, SAN, and reliable backup systems.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Services</div>
+            <p>Sales, distribution, installation, configuration, and AMC.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Benefit</div>
+            <p>Scale your business with robust server and storage systems that deliver speed, stability, and data protection.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <div class="product-icon"><i class="bi bi-laptop"></i></div>
+          <h3>Computer Hardware &amp; Peripherals</h3>
+          <div class="field-block">
+            <div class="row-label">Products</div>
+            <p>Laptops, desktops, printers, and peripherals from trusted brands like HP, Lenovo, and Dell.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Services</div>
+            <p>Sales, installation, and annual maintenance support.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Benefit</div>
+            <p>Power your business with high-performance hardware designed for productivity, reliability and long-term durability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <div class="product-icon"><i class="bi bi-shield-lock"></i></div>
+          <h3>Security &amp; Antivirus Software</h3>
+          <div class="field-block">
+            <div class="row-label">Products</div>
+            <p>Advanced antivirus and endpoint security solutions from global leaders.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Services</div>
+            <p>Licensing, installation, updates, and AMC.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Benefit</div>
+            <p>Protect your business from malware, ransomware, and cyber threats through continuous, proactive monitoring.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <div class="product-icon"><i class="bi bi-microsoft"></i></div>
+          <h3>Microsoft Products &amp; Software</h3>
+          <div class="field-block">
+            <div class="row-label">Products</div>
+            <p>Microsoft Office Suite, Windows OS, and enterprise productivity tools.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Services</div>
+            <p>Sales, software licensing, implementation, and AMC.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Benefit</div>
+            <p>Enhance productivity and collaboration with genuine Microsoft software and professional licensing support.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <div class="product-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+          <h3>Cloud Services &amp; Solutions</h3>
+          <div class="field-block">
+            <div class="row-label">Products</div>
+            <p>Cloud storage, SaaS applications, and cloud computing platforms.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Services</div>
+            <p>Sales, provisioning, setup, and managed support.</p>
+          </div>
+          <div class="field-block">
+            <div class="row-label">Benefit</div>
+            <p>Accelerate business growth with secure, scalable cloud solutions built for flexibility and cost-efficiency.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width:760px;">
+      <div class="eyebrow mb-2">FAQ's</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                What services do leading hardware companies in India provide?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Top hardware companies in India offer end-to-end IT infrastructure solutions, including the supply and maintenance of laptops, desktops, servers, network devices, and storage systems. They also provide Annual Maintenance Contracts (AMC), installation support, and IT consulting to ensure smooth business operations.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                How do software solution companies in India help businesses grow?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Software solution companies in India design and develop custom software applications that improve business efficiency, automate workflows, and enhance security. They also provide cloud integration, Microsoft licensing, and managed IT services tailored to each company's goals and infrastructure.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Why choose an IT hardware company in Bangalore for business IT infrastructure?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Partnering with a trusted IT hardware company in Bangalore ensures access to genuine products, expert installation, and reliable AMC services. Bangalore-based providers offer quick support, high-quality devices, and scalable infrastructure solutions to meet modern business demands.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                What types of software and hardware solutions does Cloute Technologies offer?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">Cloute Technologies delivers a wide range of IT hardware and software solutions, including servers, storage systems, routers, antivirus software, Microsoft Office, and cloud solutions. We handle everything from sales and licensing to installation and ongoing maintenance, ensuring complete IT reliability.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                How can businesses choose the right software solutions company in Bangalore?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">When selecting a software solutions company in Bangalore, look for expertise in custom development, cloud integration, and enterprise software support. The right partner should provide scalable, secure, and cost-effective software tailored to your organization's specific needs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-paper" id="contact">
+  <div class="container">
+    <div class="cta-band p-4 p-md-5 text-center">
+      <h2 class="fw-bold mb-3">Need the right hardware for your business?</h2>
+      <p class="mb-4" style="color:#C6D1E6;max-width:560px;margin:0 auto;">Talk to our team about servers, networking devices, laptops, and software licensing built for your business needs.</p>
+      <a href="tel:+918870955509" class="btn btn-light fw-bold px-4 py-2">
+        <i class="bi bi-telephone-fill me-2"></i>+91 88709 55509
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <a class="navbar-brand text-white d-inline-block mb-3" href="index.html">
+                <img src="data:image/png;base64,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" alt="Cloute Technologies" height="38">
+
+        </a>
+        <p class="small">Innovating IT and security with reliable software and hardware expertise.</p>
+        <p class="small mb-1"><i class="bi bi-telephone me-2"></i>+91 88709 55509</p>
+        <p class="small mb-1"><i class="bi bi-envelope me-2"></i>sales@cloute.co.in</p>
+        <p class="small"><i class="bi bi-geo-alt me-2"></i>1125, 21st A-cross 14th Main, Sector 3, HSR Layout, Bengaluru, Karnataka, India – 560102</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h5>Services</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#">Networking &amp; Infrastructure</a></li>
+          <li><a href="#">Software Development</a></li>
+          <li><a href="#">IT Support &amp; Helpdesk</a></li>
+          <li><a href="#">Managed IT Services</a></li>
+          <li><a href="#">Cybersecurity Services</a></li>
+          <li><a href="#">Cloud Support</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h5>Menu</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="recruitment.html">Recruitment</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h5>Connect With Us</h5>
+        <div class="d-flex gap-2">
+          <a href="https://www.instagram.com/cloutetechnologies/" class="social-icon"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/cloute-technologies/" class="social-icon"><i class="bi bi-linkedin"></i></a>
+          <a href="https://x.com/ClouteTech" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      Copyright © 2025 Cloute Technologies Pvt. Ltd. All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const navbar = document.getElementById('mainNavbar');
+  const toggleSticky = () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('is-sticky');
+    } else {
+      navbar.classList.remove('is-sticky');
+    }
+  };
+  window.addEventListener('scroll', toggleSticky);
+  toggleSticky();
+</script>
+</body>
+</html>
